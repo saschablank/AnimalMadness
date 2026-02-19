@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://2s2c2sb3ydc3"]
+
+[ext_resource type="Script" uid="uid://vddh35tau1jo" path="res://scenes/menu/MainMenu.gd" id="1_m2yvp"]
+[ext_resource type="Texture2D" uid="uid://b80ywk1avsyr6" path="res://assets/terrarium/Terrarium_FULL.png" id="2_s3dsm"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m2yvp")
+metadata/_edit_use_anchors_ = true
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_s3dsm")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -53.5
+offset_right = 4.0
+offset_bottom = 53.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+horizontal_alignment = 1
+
+[node name="BtnContinue" type="Button" parent="MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="BtnStartWorld" type="Button" parent="MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="BtnLoadWorld" type="Button" parent="MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="BtnOptions" type="Button" parent="MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="BtnAchievements" type="Button" parent="MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="BtnCredits" type="Button" parent="MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="BtnExit" type="Button" parent="MarginContainer/VBox"]
+layout_mode = 2
+
+[connection signal="pressed" from="MarginContainer/VBox/BtnStartWorld" to="." method="_on_start_world_pressed"]
+[connection signal="pressed" from="MarginContainer/VBox/BtnLoadWorld" to="." method="_on_load_world_pressed"]
+[connection signal="pressed" from="MarginContainer/VBox/BtnOptions" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBox/BtnAchievements" to="." method="_on_achievements_pressed"]
+[connection signal="pressed" from="MarginContainer/VBox/BtnCredits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MarginContainer/VBox/BtnExit" to="." method="_on_exit_pressed"]

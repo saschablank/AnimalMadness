@@ -1,0 +1,86 @@
+Terrarium - Game
+-----------------
+-----------------
+Beschreibung:
+-------------
+Dieses Spiel wird ein passives Zen-Garten/Zen-Terrarium, Chill out, Spiel, mit ein wenig Ressourcenverwaltung für Shopping.
+Kann auch als interaktiver Bildschirmschoner genutzt werden, ganz ähnlich einem Aquarium mit Fischen, nur das es hierbei um Fantasie-Kreaturen handelt.
+
+
+Erste Release Daten:
+---------------------
++Singleplayer zu Release
++Ein Terrarium
++3 Kreaturen (Bunnoffel / Space Bug-Spider/Bearded Dragon / Iguana)
++Erstmal nur Babyphase (geplant 3 - Baby/Teen/Adult)
++Shop mit Items für Terrarium
++Terrarium Items - Buff
++Terrarium Items - Deko
++Steam Erfolge
++Controller Support
+
+Kreaturen Verhalten (was machen die Kreaturen):
+-----------------------------------------------
++Essen			= Erhöht Essens Level
++Trinken		= Erhöht Trink Level
++Schlafen		= Erhöht Energie Level
++Kacken			= Senkt die Zufriedenheit des Tieres, wenn Zuviel Kacke im Terrarium
++Energie absondern	= Sammeln als Währung(+10)
++Sterben		= Wenn Zufriedenheit über Zeitraum X bei 0% (vielleicht reale 24 Std.)
+
+Kreaturen Werte (max. Werte hängen von der Kreatur ab):
+--------------------------------------------------------
++Essen			= Erhöht sich durch essen - Essen reduziert Zufriedenheit bei(75-51%) um 5% pro Stunde / bei(50-26%) um 25% pro Stunde / bei(25-0%) um 50% pro Stunde
++Trinken		= Erhöht sich durch trinken - Trinken reduziert Zufriedenheit bei(75-51%) um 5% pro Stunde / bei(50-26%) um 25% pro Stunde / bei(25-0%) um 50% pro Stunde
++Energie Level		= Erhöht sich durch - schlafen(+50) / essen(+25) / trinken(+10)
++Zufriedenheit(100%)	= Erhöht sich durch - schlafen(+25%) / essen(+15%) / trinken(+5%)
++Energie absondern	= Energie muss über 50%, in drei Stages bei Zufriedenheit 100-80% = 3 Energiekugeln / 79-50% = 2 Energiekugeln / 49-25% = 1 Energiekugel /24-0% = Nichts
+
+Kreaturen:
+----------
+Bunnoffel - Werte:
+------------------
+Essen:		100	-10/30 Minuten
+Trinken:	100	-10/30 Minuten
+Energie:	100	-10/30 Minuten
+Eigenschaften:	Mag das Klima neutral
+
+
+Terrarium / Items:
+-------------------
++Klima/Temperatur (ohne Items neutral)
++Deko Items - nur Optik
++Items wie bessere Futter-/Trinkschalen (größere > Automatik Feeder)
++Klima Items, reduzieren/erhöhen Temperatur für Kreatur (beeinflusst Zufriedenheit - je nach Kreatur)
++Höhle/Verstecke für Kreaturen (beeinflusst Zufriedenheit - je nach Kreatur)
+...
+
+Roadmap:
+--------
++Wachstumsphasen - Baby + Teen + Adult hinzufügen
++Verschiedene Farben der Kreaturen
++Mehr Deko Items
++Kreaturen Items wie Hüte/Schals/Schmuck
++Weitere Kreaturen
++Weitere Terrarien
++Kreaturen interagieren mit Items/Deko
++Kreaturen streicheln für Buff (ähnlich Dungeon Keeper mit simulierter Hand)
++Weitere Animationen/Verhalten, wie sich putzen
++Züchten mit Kreaturen
++Multiplayer - Arena Hubs - für Kreaturen Kämpfe
+
+
+ToDo:
+-----
+Phase - idle
+-Side Animation Bunnoffel
+
+Phase - cute
+-Side Modell Bunnoffel - drawing/cutting
+-Side Modell Bunnoffel - rigging
+-Side Animation Bunnoffel
+
+Phase - jump
+-Side Modell Bunnoffel - drawing/cutting
+-Side Modell Bunnoffel - rigging
+-Side Animation Bunnoffel

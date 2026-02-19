@@ -1,0 +1,20 @@
+keys,en
+TITLE_MAIN,Terrarium - Game
+MENU_START_WORLD,Start World
+MENU_LOAD_WORLD,Load World
+MENU_OPTIONS,Options
+MENU_EXIT,Exit
+MENU_CONTINUE,Continue
+MENU_ACHIEVEMENTS,Achievements
+MENU_CREDITS,Credits
+MENU_BACK,Back
+TITLE_ACHIEVEMENTS,Achievements
+ACHIEVEMENTS_PLACEHOLDER,Achievements will appear here later.
+TITLE_CREDITS,Credits
+CREDITS_PLACEHOLDER,Credits will appear here later.
+TITLE_OPTIONS,Options
+OPTIONS_PLACEHOLDER,Options will be implemented here later.
+TITLE_SAVE_SLOTS,Save Slots
+SAVE_SLOTS_PLACEHOLDER,Save slots (6) will be implemented here later.
+TITLE_WORLD_SELECT,World Select
+WORLD_SELECT_PLACEHOLDER,World selection will be implemented here later.
