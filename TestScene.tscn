@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bi3pk2al8wjsx"]
+[gd_scene load_steps=14 format=3 uid="uid://bi3pk2al8wjsx"]
 
 [ext_resource type="Texture2D" uid="uid://dde6wbhuoy2d2" path="res://Room.jpeg" id="1_cguwc"]
 [ext_resource type="Material" uid="uid://551tn7ntep8g" path="res://GreenGlass.tres" id="2_wicfy"]
@@ -39,8 +39,17 @@ gradient = SubResource("Gradient_sreuk")
 width = 512
 height = 512
 
+[sub_resource type="Gradient" id="Gradient_tq6uv"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_12c36"]
+gradient = SubResource("Gradient_tq6uv")
+fill = 1
+fill_from = Vector2(0.491453, 0.517094)
+fill_to = Vector2(0.9188034, 0.17094018)
+
 [node name="Node2D" type="Node2D"]
-metadata/_edit_horizontal_guides_ = [616.0]
+metadata/_edit_horizontal_guides_ = [729.0]
 
 [node name="Panel" type="Panel" parent="."]
 custom_minimum_size = Vector2(1280, 1080)
@@ -59,20 +68,28 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_go42g")
 material = ExtResource("2_wicfy")
 color = Color(1, 1, 1, 0.08627451)
 texture = ExtResource("3_go42g")
-polygon = PackedVector2Array(1, 1066, 307, 611, 305, 4, 4, 1)
+polygon = PackedVector2Array(1, 1066, 307, 611, 302, 92, 1, 88)
 
 [node name="Polygon2D2" type="Polygon2D" parent="."]
 material = ExtResource("2_wicfy")
+position = Vector2(-207.91516, 0)
+scale = Vector2(1.1228814, 1)
 texture = ExtResource("3_go42g")
-polygon = PackedVector2Array(1916, 1096, 1692, 616, 1695, -1, 1928, -1)
+polygon = PackedVector2Array(1916, 1096, 1692, 616, 1696.4526, 66, 1919.9846, 62)
 
 [node name="Polygon2D3" type="Polygon2D" parent="."]
 material = ExtResource("2_wicfy")
 color = Color(1, 1, 1, 0.19607843)
 texture = ExtResource("3_go42g")
-polygon = PackedVector2Array(301, 619, 1697, 613, 1695, 1, 294, -1)
+polygon = PackedVector2Array(301, 619, 1697, 613, 1688, 70, 994, 107, 284, 90)
 
 [node name="Polygon2D4" type="Polygon2D" parent="."]
 material = SubResource("ShaderMaterial_sreuk")
 texture = SubResource("GradientTexture2D_tq6uv")
-polygon = PackedVector2Array(293, 617, 1, 1070, 1921, 1089, 1695, 600, 963, 603)
+polygon = PackedVector2Array(252, 733, 4, 966, 1941, 992, 1746, 729, 985, 731)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = SubResource("GradientTexture2D_12c36")

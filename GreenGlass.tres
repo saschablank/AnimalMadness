@@ -5,4 +5,4 @@
 [resource]
 shader = ExtResource("1_p0e5h")
 shader_parameter/blur_size = Vector2(0.5, 0.5)
-shader_parameter/blur_mix_step = 0.8310000394725
+shader_parameter/blur_mix_step = 1.0
