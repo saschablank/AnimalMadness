@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b8rlufl2amktn"]
 
-[ext_resource type="Script" uid="uid://bh7oj85kfw0ad" path="res://scenes/menu/SimpleBackMenu.gd" id="1_n0wad"]
+[ext_resource type="Script" uid="uid://bh7oj85kfw0ad" path="res://src/SimpleBackMenu.gd" id="1_n0wad"]
 [ext_resource type="Texture2D" uid="uid://b80ywk1avsyr6" path="res://assets/terrarium/Terrarium_FULL.png" id="2_w03au"]
 
 [node name="OptionsMenu" type="Control"]

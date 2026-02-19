@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf1h1e2h81ll7"]
+
+[ext_resource type="Script" uid="uid://bwut1svumuptb" path="res://src/world/WorldContainer.gd" id="1_u8vsk"]
+[ext_resource type="Texture2D" uid="uid://b2c6icod6ry8b" path="res://assets/terrarium/Terrarium.png" id="2_fg4rj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tt84d"]
+texture = ExtResource("2_fg4rj")
+
+[node name="World0" type="Node2D"]
+script = ExtResource("1_u8vsk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1908.0
+offset_bottom = 1076.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_tt84d")

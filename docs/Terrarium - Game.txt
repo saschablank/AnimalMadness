@@ -7,6 +7,7 @@ Dieses Spiel wird ein passives Zen-Garten/Zen-Terrarium, Chill out, Spiel, mit e
 Kann auch als interaktiver Bildschirmschoner genutzt werden, ganz ähnlich einem Aquarium mit Fischen, nur das es hierbei um Fantasie-Kreaturen handelt.
 
 
+
 Erste Release Daten:
 ---------------------
 +Singleplayer zu Release

@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cadae1sy8r4vn"]
 
-[ext_resource type="Texture2D" uid="uid://cr8irip14wbkk" path="res://assets/branding/hühühü_slim.png" id="1_4qrgx"]
-[ext_resource type="Script" uid="uid://bunqo4w4gcvqm" path="res://scenes/boot/Boot.gd" id="2_cp6y4"]
-[ext_resource type="AudioStream" uid="uid://bmbgk2d4slsmp" path="res://assets/music/logo.mp3" id="3_y6jf8"]
+[ext_resource type="Script" uid="uid://bunqo4w4gcvqm" path="res://src/Boot.gd" id="1_8bgtt"]
+[ext_resource type="Texture2D" uid="uid://cr8irip14wbkk" path="res://assets/branding/hühühü_slim.png" id="2_pii80"]
+[ext_resource type="AudioStream" uid="uid://bmbgk2d4slsmp" path="res://assets/music/logo.mp3" id="3_q3vv4"]
 
 [node name="Boot" type="Control"]
 layout_mode = 3
@@ -13,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("2_cp6y4")
+script = ExtResource("1_8bgtt")
 metadata/_edit_use_anchors_ = true
 
 [node name="BG" type="ColorRect" parent="."]
@@ -38,7 +38,7 @@ offset_right = 210.0
 offset_bottom = 442.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_4qrgx")
+texture = ExtResource("2_pii80")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.5
@@ -46,5 +46,6 @@ one_shot = true
 autostart = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_y6jf8")
+stream = ExtResource("3_q3vv4")
+volume_db = -30.439
 autoplay = true

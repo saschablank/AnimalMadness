@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cwadisnmge3l2"]
 
-[ext_resource type="Script" uid="uid://bh7oj85kfw0ad" path="res://scenes/menu/SimpleBackMenu.gd" id="1_cpoks"]
+[ext_resource type="Script" uid="uid://bh7oj85kfw0ad" path="res://src/SimpleBackMenu.gd" id="1_cpoks"]
 [ext_resource type="Texture2D" uid="uid://b2c6icod6ry8b" path="res://assets/terrarium/Terrarium.png" id="2_n7hig"]
 
 [node name="CreditsMenu" type="Control"]

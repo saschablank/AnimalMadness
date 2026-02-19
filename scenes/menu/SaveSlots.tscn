@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://de8ae5ma540ao"]
 
-[ext_resource type="Script" uid="uid://bh7oj85kfw0ad" path="res://scenes/menu/SimpleBackMenu.gd" id="1_ancga"]
+[ext_resource type="Script" uid="uid://bh7oj85kfw0ad" path="res://src/SimpleBackMenu.gd" id="1_ancga"]
 [ext_resource type="Texture2D" uid="uid://b80ywk1avsyr6" path="res://assets/terrarium/Terrarium_FULL.png" id="2_qpr46"]
 
 [node name="SaveSlots" type="Control"]
