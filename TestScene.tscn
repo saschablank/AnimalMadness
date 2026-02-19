@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://bi3pk2al8wjsx"]
+
+[ext_resource type="Texture2D" uid="uid://dde6wbhuoy2d2" path="res://Room.jpeg" id="1_cguwc"]
+[ext_resource type="Material" uid="uid://551tn7ntep8g" path="res://GreenGlass.tres" id="2_wicfy"]
+[ext_resource type="Texture2D" uid="uid://6xb1luy758d" path="res://GreenGlassTexture.tres" id="3_go42g"]
+[ext_resource type="Shader" uid="uid://cghfmbfmre23i" path="res://SandShader.gdshader" id="4_go42g"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_go42g"]
+texture = ExtResource("1_cguwc")
+
+[sub_resource type="Gradient" id="Gradient_go42g"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_sreuk"]
+frequency = 0.0983
+fractal_type = 2
+fractal_lacunarity = 1.0
+fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tq6uv"]
+noise = SubResource("FastNoiseLite_sreuk")
+color_ramp = SubResource("Gradient_go42g")
+normalize = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sreuk"]
+shader = ExtResource("4_go42g")
+shader_parameter/noise = SubResource("NoiseTexture2D_tq6uv")
+shader_parameter/sand_color_dark = Color(1, 0.5529412, 0, 1)
+shader_parameter/sand_color_bright = Color(1, 0.9764706, 0, 1)
+shader_parameter/mix_threashold_dark = 0.31109999212917
+shader_parameter/mix_threashold_bright = 0.46049998834935
+shader_parameter/final_mix = 0.16929999973683002
+
+[sub_resource type="Gradient" id="Gradient_sreuk"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tq6uv"]
+gradient = SubResource("Gradient_sreuk")
+width = 512
+height = 512
+
+[node name="Node2D" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [616.0]
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(1280, 1080)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -2.0
+offset_right = 1948.0
+offset_bottom = 1078.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_go42g")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+material = ExtResource("2_wicfy")
+color = Color(1, 1, 1, 0.08627451)
+texture = ExtResource("3_go42g")
+polygon = PackedVector2Array(1, 1066, 307, 611, 305, 4, 4, 1)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+material = ExtResource("2_wicfy")
+texture = ExtResource("3_go42g")
+polygon = PackedVector2Array(1916, 1096, 1692, 616, 1695, -1, 1928, -1)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+material = ExtResource("2_wicfy")
+color = Color(1, 1, 1, 0.19607843)
+texture = ExtResource("3_go42g")
+polygon = PackedVector2Array(301, 619, 1697, 613, 1695, 1, 294, -1)
+
+[node name="Polygon2D4" type="Polygon2D" parent="."]
+material = SubResource("ShaderMaterial_sreuk")
+texture = SubResource("GradientTexture2D_tq6uv")
+polygon = PackedVector2Array(293, 617, 1, 1070, 1921, 1089, 1695, 600, 963, 603)

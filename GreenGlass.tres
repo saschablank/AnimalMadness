@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://551tn7ntep8g"]
+
+[ext_resource type="Shader" uid="uid://bmadaoqykokit" path="res://Glass.gdshader" id="1_p0e5h"]
+
+[resource]
+shader = ExtResource("1_p0e5h")
+shader_parameter/blur_size = Vector2(0.5, 0.5)
+shader_parameter/blur_mix_step = 0.8310000394725

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cf1h1e2h81ll7"]
+[gd_scene load_steps=5 format=3 uid="uid://cf1h1e2h81ll7"]
 
 [ext_resource type="Script" uid="uid://bwut1svumuptb" path="res://src/world/WorldContainer.gd" id="1_u8vsk"]
 [ext_resource type="Texture2D" uid="uid://b2c6icod6ry8b" path="res://assets/terrarium/Terrarium.png" id="2_fg4rj"]
+[ext_resource type="PackedScene" uid="uid://bip4wwnoynp7o" path="res://scenes/levels/Creature.tscn" id="3_fg4rj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tt84d"]
 texture = ExtResource("2_fg4rj")
@@ -29,3 +30,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_tt84d")
+
+[node name="walkableArea" type="Polygon2D" parent="."]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(72, 771, 251, 561, 1654, 561, 1842, 771, 1839, 856, 1683, 885, 1596, 876, 1521, 901, 1286, 890, 978, 879, 616, 888, 443, 881, 248, 885, 175, 869, 76, 860)
+
+[node name="Creature" parent="." node_paths=PackedStringArray("walkable_area") instance=ExtResource("3_fg4rj")]
+position = Vector2(881, 721)
+walkable_area = NodePath("../walkableArea")
