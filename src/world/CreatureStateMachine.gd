@@ -9,7 +9,6 @@ enum ERigs {
 	SIDE,
 	REAR
 }
-
 var rigs: Dictionary = {
 	ERigs.FRONT: null,
 	ERigs.SIDE: null,
@@ -26,6 +25,12 @@ func _ready():
 		it.state_machine = self
 
 
+func get_idle_frame_counter() -> int:
+	if get_active_state_name() == "idle":
+		return active_state.idle_frame_counter
+	return -1
+
+
 func set_rigs(rig_front: RigBase, rig_side: RigBase, rig_rear: RigBase):
 	for it in states.keys():
 		var state: CreatureStateBase = states[it]
@@ -39,10 +44,12 @@ func set_rigs(rig_front: RigBase, rig_side: RigBase, rig_rear: RigBase):
 func get_state_names() -> Array[String]:
 	return states.keys()
 
+
 func get_active_state_name() -> String:
 	if active_state != null:
 		return active_state.name
 	return String()
+
 
 func switch_to_state(state_name: String) -> void:
 	if state_name in states.keys():
@@ -55,8 +62,6 @@ func switch_to_state(state_name: String) -> void:
 		push_error("NO STATE WITH THAT NAME: " + state_name + " IN PLAYER STATE MACHINE")
 
 
-#Tick function
 func _process_states(_delta:float) -> void:
 	if active_state != null:
 		active_state.process_state(_delta)
-		

@@ -42,29 +42,38 @@ layout_mode = 2
 [node name="Title" type="Label" parent="MarginContainer/VBox"]
 layout_mode = 2
 size_flags_horizontal = 4
+text = "TITLE_MAIN"
 horizontal_alignment = 1
 
 [node name="BtnContinue" type="Button" parent="MarginContainer/VBox"]
 layout_mode = 2
+text = "MENU_CONTINUE"
 
 [node name="BtnStartWorld" type="Button" parent="MarginContainer/VBox"]
 layout_mode = 2
+text = "MENU_START_WORLD"
 
 [node name="BtnLoadWorld" type="Button" parent="MarginContainer/VBox"]
 layout_mode = 2
+text = "MENU_LOAD_WORLD"
 
 [node name="BtnOptions" type="Button" parent="MarginContainer/VBox"]
 layout_mode = 2
+text = "MENU_OPTIONS"
 
 [node name="BtnAchievements" type="Button" parent="MarginContainer/VBox"]
 layout_mode = 2
+text = "MENU_ACHIEVEMENTS"
 
 [node name="BtnCredits" type="Button" parent="MarginContainer/VBox"]
 layout_mode = 2
+text = "MENU_CREDITS"
 
 [node name="BtnExit" type="Button" parent="MarginContainer/VBox"]
 layout_mode = 2
+text = "MENU_EXIT"
 
+[connection signal="pressed" from="MarginContainer/VBox/BtnContinue" to="." method="_on_btn_continue_pressed"]
 [connection signal="pressed" from="MarginContainer/VBox/BtnStartWorld" to="." method="_on_start_world_pressed"]
 [connection signal="pressed" from="MarginContainer/VBox/BtnLoadWorld" to="." method="_on_load_world_pressed"]
 [connection signal="pressed" from="MarginContainer/VBox/BtnOptions" to="." method="_on_options_pressed"]

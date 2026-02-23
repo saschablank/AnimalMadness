@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cf1h1e2h81ll7"]
+[gd_scene load_steps=6 format=3 uid="uid://cf1h1e2h81ll7"]
 
 [ext_resource type="Script" uid="uid://bwut1svumuptb" path="res://src/world/WorldContainer.gd" id="1_u8vsk"]
 [ext_resource type="Texture2D" uid="uid://b2c6icod6ry8b" path="res://assets/terrarium/Terrarium.png" id="2_fg4rj"]
+[ext_resource type="PackedScene" uid="uid://bj1e0654104du" path="res://scenes/world/ui/WorldUi.tscn" id="2_tt84d"]
 [ext_resource type="PackedScene" uid="uid://bip4wwnoynp7o" path="res://scenes/levels/Creature.tscn" id="3_fg4rj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tt84d"]
@@ -11,6 +12,9 @@ texture = ExtResource("2_fg4rj")
 script = ExtResource("1_u8vsk")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="WorldUi" parent="CanvasLayer" node_paths=PackedStringArray("creature") instance=ExtResource("2_tt84d")]
+creature = NodePath("../../Creature")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

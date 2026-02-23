@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cnkoc54t4swys"]
+
+[node name="BuildMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_right = 1919.0
+offset_bottom = 125.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+layout_mode = 2

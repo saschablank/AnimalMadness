@@ -1,6 +1,7 @@
 extends "res://src/world/createStateMachine/CreatureStateBase.gd"
 
 @export var walk_speed: float = 75.0
+
 var destination_position: Vector2 = Vector2.ZERO
 var has_point: bool = false
 

@@ -1,0 +1,132 @@
+[gd_scene load_steps=7 format=3 uid="uid://bldtdjh4t8iyj"]
+
+[ext_resource type="Script" uid="uid://bakpwgthmcpgo" path="res://src/world/ui/ButtonWheel.gd" id="1_74orj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_38t1k"]
+
+[sub_resource type="Gradient" id="Gradient_74orj"]
+offsets = PackedFloat32Array(0, 0.6450382, 0.72900766)
+colors = PackedColorArray(0.9882353, 0, 0, 1, 0.8222721, 0, 0, 0.83206105, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_53scn"]
+gradient = SubResource("Gradient_74orj")
+fill = 1
+fill_from = Vector2(0.4957265, 0.51282054)
+fill_to = Vector2(0.97008544, 0)
+
+[sub_resource type="Gradient" id="Gradient_38t1k"]
+offsets = PackedFloat32Array(0, 0.6145038, 0.6755725)
+colors = PackedColorArray(1, 1, 1, 1, 0.9465649, 0.9465649, 0.9465649, 0.9465649, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_74orj"]
+gradient = SubResource("Gradient_38t1k")
+fill = 1
+fill_from = Vector2(0.4957265, 0.52136755)
+
+[node name="ButtonWheel" type="Control"]
+custom_minimum_size = Vector2(150, 200)
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(2, 2)
+script = ExtResource("1_74orj")
+metadata/_edit_horizontal_guides_ = [163.0]
+metadata/_edit_vertical_guides_ = [33.0, 90.0]
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 60.0
+offset_right = 66.0
+offset_bottom = 124.0
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxEmpty_38t1k")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_38t1k")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_38t1k")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_38t1k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_38t1k")
+text = "Interact"
+icon = SubResource("GradientTexture2D_53scn")
+icon_alignment = 1
+
+[node name="subbuttons" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 8.0
+offset_bottom = 12.5
+
+[node name="Feed" type="Button" parent="subbuttons"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 8.000001
+offset_right = 80.0
+offset_bottom = 72.0
+scale = Vector2(0.5, 0.497)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_38t1k")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_38t1k")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_38t1k")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_38t1k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_38t1k")
+text = "Feed"
+icon = SubResource("GradientTexture2D_74orj")
+icon_alignment = 1
+
+[node name="Pet" type="Button" parent="subbuttons"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 47.000023
+offset_right = 141.0
+offset_bottom = 111.00002
+scale = Vector2(0.5, 0.497)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_38t1k")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_38t1k")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_38t1k")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_38t1k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_38t1k")
+text = "Pet"
+icon = SubResource("GradientTexture2D_74orj")
+icon_alignment = 1
+
+[node name="BuildingMode" type="Button" parent="subbuttons"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 122.00001
+offset_right = 141.0
+offset_bottom = 186.0
+scale = Vector2(0.5, 0.497)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_38t1k")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_38t1k")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_38t1k")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_38t1k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_38t1k")
+text = "Build"
+icon = SubResource("GradientTexture2D_74orj")
+icon_alignment = 1
+
+[node name="Play" type="Button" parent="subbuttons"]
+layout_mode = 0
+offset_left = 17.000004
+offset_top = 150.00003
+offset_right = 81.0
+offset_bottom = 214.00003
+scale = Vector2(0.5, 0.497)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_38t1k")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_38t1k")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_38t1k")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_38t1k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_38t1k")
+text = "Play"
+icon = SubResource("GradientTexture2D_74orj")
+icon_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="subbuttons/Feed" to="." method="_on_feed_pressed"]
+[connection signal="pressed" from="subbuttons/Pet" to="." method="_on_pet_pressed"]
+[connection signal="pressed" from="subbuttons/BuildingMode" to="." method="_on_building_mode_pressed"]
+[connection signal="pressed" from="subbuttons/Play" to="." method="_on_play_pressed"]

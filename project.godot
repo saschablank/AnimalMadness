@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Terrarium"
-run/main_scene="uid://cadae1sy8r4vn"
+run/main_scene="res://scenes/Main.tscn"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Nakama="*res://addons/com.heroiclabs.nakama/Nakama.gd"
 
 [display]
 

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj1e0654104du"]
+
+[ext_resource type="Script" uid="uid://6tahl26ursqs" path="res://src/world/ui/WorldUi.gd" id="1_wmqyn"]
+[ext_resource type="PackedScene" uid="uid://bldtdjh4t8iyj" path="res://scenes/world/ui/ButtonWheel.tscn" id="2_ihv2g"]
+[ext_resource type="PackedScene" uid="uid://cvnrq57uwwf6r" path="res://scenes/world/ui/BottomBar.tscn" id="3_pbvqa"]
+
+[node name="WorldUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wmqyn")
+
+[node name="ButtonWheel" parent="." instance=ExtResource("2_ihv2g")]
+layout_mode = 0
+offset_top = 586.0
+offset_right = 150.0
+offset_bottom = 786.0
+
+[node name="BottomBar" parent="." instance=ExtResource("3_pbvqa")]
+layout_mode = 1
+
+[connection signal="_on_building_mode" from="ButtonWheel" to="." method="_on_button_wheel__on_building_mode"]
+[connection signal="_on_feed" from="ButtonWheel" to="." method="_on_button_wheel__on_feed"]
+[connection signal="_on_pet" from="ButtonWheel" to="." method="_on_button_wheel__on_pet"]
+[connection signal="_on_play" from="ButtonWheel" to="." method="_on_button_wheel__on_play"]
