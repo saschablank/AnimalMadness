@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bip4wwnoynp7o"]
+[gd_scene load_steps=11 format=3 uid="uid://bip4wwnoynp7o"]
 
 [ext_resource type="Script" uid="uid://d34nud3naebts" path="res://src/world/CreatureBase.gd" id="1_pjvmn"]
 [ext_resource type="PackedScene" uid="uid://dtkdhklfpswtu" path="res://scenes/creatures/bunnoffel/bunnoffel_front.tscn" id="2_uc2s4"]
@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://vpfrqorxo1bd" path="res://scenes/creatures/bunnoffel/bunnoffel_side.tscn" id="4_dmiqa"]
 [ext_resource type="Script" uid="uid://chid6otvc5n72" path="res://src/world/CreatureStateMachine.gd" id="5_087yk"]
 [ext_resource type="Script" uid="uid://s63q2csqo75s" path="res://src/world/createStateMachine/CreatureStateBase.gd" id="6_dmiqa"]
+[ext_resource type="Script" uid="uid://cpur63eunoym5" path="res://src/world/createStateMachine/CreateStateIdle.gd" id="6_vdcpd"]
+[ext_resource type="Script" uid="uid://n3w4xnewcwu8" path="res://src/world/createStateMachine/CreateStateWalk.gd" id="7_q6srx"]
+[ext_resource type="Script" uid="uid://cewlehyxwdkq1" path="res://src/world/CreateAttributes.gd" id="8_elm3m"]
+[ext_resource type="Script" uid="uid://wmftuqdxv8fd" path="res://src/AttributesProcessor.gd" id="9_3v5fi"]
 
 [node name="Creature" type="Node2D"]
 script = ExtResource("1_pjvmn")
@@ -22,10 +26,16 @@ visible = false
 script = ExtResource("5_087yk")
 
 [node name="idle" type="Node" parent="StateMachine"]
-script = ExtResource("6_dmiqa")
+script = ExtResource("6_vdcpd")
 
 [node name="walk" type="Node" parent="StateMachine"]
-script = ExtResource("6_dmiqa")
+script = ExtResource("7_q6srx")
 
 [node name="eat" type="Node" parent="StateMachine"]
 script = ExtResource("6_dmiqa")
+
+[node name="Attributes" type="Node" parent="."]
+script = ExtResource("8_elm3m")
+
+[node name="AttributesProcessor" type="Node" parent="."]
+script = ExtResource("9_3v5fi")

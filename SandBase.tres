@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://bfj5tto55neur"]
 
-[ext_resource type="Shader" uid="uid://24cwx6eamjrf" path="res://SandShader_new.gdshader" id="1_3bftt"]
+[ext_resource type="Shader" path="res://SandShader_new.gdshader" id="1_3bftt"]
 
 [sub_resource type="Gradient" id="Gradient_go42g"]
 

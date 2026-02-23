@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://vpfrqorxo1bd"]
+[gd_scene load_steps=19 format=3 uid="uid://vpfrqorxo1bd"]
 
+[ext_resource type="Script" uid="uid://jp8s5a7mya81" path="res://src/rigs/RigBunnoffelSide.gd" id="1_njx1l"]
 [ext_resource type="Texture2D" uid="uid://caskqdppv6rh2" path="res://assets/creatures/bunoffel/bunnoffel_side_body.png" id="1_p025y"]
 [ext_resource type="Texture2D" uid="uid://cr3lrds31jql8" path="res://assets/creatures/bunoffel/bunnoffel_side_head.png" id="2_k66di"]
 [ext_resource type="Texture2D" uid="uid://beq7dgvutgtu4" path="res://assets/creatures/bunoffel/bunnoffel_side_ear_R.png" id="3_2xixa"]
@@ -1061,6 +1062,7 @@ _data = {
 
 [node name="bunnoffel_side" type="Node2D"]
 scale = Vector2(0.3, 0.3)
+script = ExtResource("1_njx1l")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false

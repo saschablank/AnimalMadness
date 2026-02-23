@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://dtkdhklfpswtu"]
 
-[ext_resource type="Script" uid="uid://c06ou3vxl8imp" path="res://src/rigs/RigBase.gd" id="1_k5c7k"]
+[ext_resource type="Script" uid="uid://dq4ubkptdhk6j" path="res://src/rigs/RigBunnofelFront.gd" id="1_k5c7k"]
 [ext_resource type="Texture2D" uid="uid://k02q2kysxspm" path="res://assets/creatures/bunoffel/bunnoffel_front_body.png" id="1_plef8"]
 [ext_resource type="Texture2D" uid="uid://blmm33qo5pwjw" path="res://assets/creatures/bunoffel/bunnoffel_front_head_eyes_closed.png" id="2_k5c7k"]
 [ext_resource type="Texture2D" uid="uid://bujnlshnrsw5i" path="res://assets/creatures/bunoffel/bunnoffel_front_ear_R.png" id="3_irrik"]
