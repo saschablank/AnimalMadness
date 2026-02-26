@@ -22,7 +22,8 @@ func _process(delta: float) -> void:
 		PLAYER_PROFILE.do_nakama_login()
 		await PLAYER_PROFILE._on_player_connected
 		print("PLAYER CONNECTED")
-		
+		print(PLAYER_PROFILE.IS_ONLINE)
+
 
 
 func _on_main_menu__on_load_world(world_path: String) -> void:

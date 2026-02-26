@@ -12,7 +12,7 @@ colors = PackedColorArray(0.9882353, 0, 0, 1, 0.8222721, 0, 0, 0.83206105, 0, 0,
 gradient = SubResource("Gradient_74orj")
 fill = 1
 fill_from = Vector2(0.4957265, 0.51282054)
-fill_to = Vector2(0.97008544, 0)
+fill_to = Vector2(0.98717946, 0)
 
 [sub_resource type="Gradient" id="Gradient_38t1k"]
 offsets = PackedFloat32Array(0, 0.6145038, 0.6755725)
