@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://dc087hual8j16"]
+
+[ext_resource type="Texture2D" uid="uid://dde6wbhuoy2d2" path="res://Room.jpeg" id="1_ftvkq"]
+[ext_resource type="Texture2D" uid="uid://b80ywk1avsyr6" path="res://assets/terrarium/Terrarium_FULL.png" id="2_v3sml"]
+[ext_resource type="Material" uid="uid://bfj5tto55neur" path="res://SandBase.tres" id="5_8bk1f"]
+[ext_resource type="PackedScene" uid="uid://dtkdhklfpswtu" path="res://scenes/creatures/bunnoffel/bunnoffel_front.tscn" id="6_p4te8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_go42g"]
+texture = ExtResource("1_ftvkq")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_12c36"]
+
+[sub_resource type="Gradient" id="Gradient_sreuk"]
+offsets = PackedFloat32Array(0.73157895, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tq6uv"]
+gradient = SubResource("Gradient_sreuk")
+width = 512
+height = 512
+use_hdr = true
+
+[sub_resource type="Gradient" id="Gradient_tq6uv"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_12c36"]
+gradient = SubResource("Gradient_tq6uv")
+fill = 1
+fill_from = Vector2(0.491453, 0.517094)
+fill_to = Vector2(0.9188034, 0.17094018)
+
+[node name="Node2D" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [729.0]
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+custom_minimum_size = Vector2(1280, 1080)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -2.0
+offset_right = 1948.0
+offset_bottom = 1078.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_go42g")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -145.0
+offset_top = -242.0
+offset_right = 1391.0
+offset_bottom = 782.0
+scale = Vector2(1.4415798, 1.4409747)
+texture = ExtResource("2_v3sml")
+
+[node name="bunnoffel_front" parent="." instance=ExtResource("6_p4te8")]
+position = Vector2(945.99994, 754)
+
+[node name="terra_boden" type="Polygon2D" parent="."]
+modulate = Color(0.7204674, 0.7204675, 0.7204674, 1)
+self_modulate = Color(0.13319641, 0.13319641, 0.13319638, 1)
+material = SubResource("CanvasItemMaterial_12c36")
+position = Vector2(-8, 72)
+scale = Vector2(0.98966944, 1)
+polygon = PackedVector2Array(297.98557, 556.00793, 10.102853, 967.2652, 1946.4047, 967.2769, 1650.046, 556)
+
+[node name="Floor" type="Polygon2D" parent="terra_boden"]
+material = ExtResource("5_8bk1f")
+texture = SubResource("GradientTexture2D_tq6uv")
+texture_scale = Vector2(2, 2)
+texture_rotation = 0.29147
+polygon = PackedVector2Array(297.98557, 556.00793, 10.102853, 967.2652, 1946.4047, 967.2769, 1648.9976, 556.00854)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(1.2, 1.2, 1.2, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+texture = SubResource("GradientTexture2D_12c36")
