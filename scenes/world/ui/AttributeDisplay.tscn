@@ -1,6 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmjwynwknpaco"]
+[gd_scene load_steps=10 format=3 uid="uid://dmjwynwknpaco"]
 
 [ext_resource type="Script" uid="uid://dk1kpkbuo0qaj" path="res://src/world/ui/AttributeDisplay.gd" id="1_br833"]
+
+[sub_resource type="Gradient" id="Gradient_br833"]
+offsets = PackedFloat32Array(0.773913, 0.9631676)
+colors = PackedColorArray(0, 0.18052815, 1.0006096, 0.5411765, 0, 0, 0.6039216, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cj0ve"]
+gradient = SubResource("Gradient_br833")
+width = 200
+height = 75
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6a73p"]
+texture = SubResource("GradientTexture2D_cj0ve")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_br833"]
 
 [sub_resource type="Gradient" id="Gradient_xrkrc"]
 offsets = PackedFloat32Array(1)
@@ -12,28 +32,52 @@ width = 200
 height = 32
 
 [sub_resource type="Gradient" id="Gradient_cj0ve"]
-offsets = PackedFloat32Array(0.14, 0.584)
-colors = PackedColorArray(1, 0, 0, 1, 0, 1, 0, 1)
+offsets = PackedFloat32Array(0.14, 1)
+colors = PackedColorArray(1, 0, 0, 0.5176471, 0, 1, 0, 0.627451)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_6a73p"]
 gradient = SubResource("Gradient_cj0ve")
 width = 200
 height = 32
 
-[node name="AttributteDisplay" type="VBoxContainer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Panel" type="Panel"]
+custom_minimum_size = Vector2(250, 100)
+offset_right = 248.0
+offset_bottom = 98.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_6a73p")
 script = ExtResource("1_br833")
 
-[node name="Label" type="Label" parent="."]
+[node name="AttributteDisplay" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -43.5
+offset_right = 100.0
+offset_bottom = 43.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSeparator" type="HSeparator" parent="AttributteDisplay"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_br833")
+
+[node name="Label" type="Label" parent="AttributteDisplay"]
 layout_mode = 2
 text = "Name of attribute"
+horizontal_alignment = 1
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="AttributteDisplay"]
 layout_mode = 2
 value = 100.0
 texture_under = SubResource("GradientTexture2D_br833")
 texture_progress = SubResource("GradientTexture2D_6a73p")
+
+[node name="HSeparator2" type="HSeparator" parent="AttributteDisplay"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_br833")

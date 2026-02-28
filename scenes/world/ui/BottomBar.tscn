@@ -1,7 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvnrq57uwwf6r"]
+[gd_scene load_steps=8 format=3 uid="uid://cvnrq57uwwf6r"]
 
 [ext_resource type="Script" uid="uid://cloijteltl3f4" path="res://src/world/ui/BottomBar.gd" id="1_od351"]
 [ext_resource type="PackedScene" uid="uid://dmjwynwknpaco" path="res://scenes/world/ui/AttributeDisplay.tscn" id="2_a3k6b"]
+[ext_resource type="PackedScene" uid="uid://bldtdjh4t8iyj" path="res://scenes/world/ui/ButtonWheel.tscn" id="2_ir6f5"]
+
+[sub_resource type="Gradient" id="Gradient_od351"]
+offsets = PackedFloat32Array(0.6424242, 0.6545454, 0.65858585)
+colors = PackedColorArray(0.49019608, 0.6627451, 1, 1, 0, 0.18039216, 0.6117647, 1, 0, 0.18039216, 0.6117647, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a3k6b"]
+gradient = SubResource("Gradient_od351")
+fill = 2
+fill_from = Vector2(0.74786323, 0.47863248)
+fill_to = Vector2(0.726, 1.35)
+metadata/_snap_count = 16
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ir6f5"]
+texture = SubResource("GradientTexture2D_a3k6b")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a3k6b"]
 
 [node name="BottomBar" type="Control"]
 layout_mode = 3
@@ -9,32 +26,61 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -127.0
+offset_top = -256.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("1_od351")
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -176.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ir6f5")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 36.0
+offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
-columns = 6
 
-[node name="Hunger" parent="GridContainer" instance=ExtResource("2_a3k6b")]
+[node name="VSeparator" type="VSeparator" parent="Panel/HBoxContainer"]
 layout_mode = 2
-attribute_name = "Hunger"
+theme_override_constants/separation = 50
+theme_override_styles/separator = SubResource("StyleBoxEmpty_a3k6b")
 
-[node name="Thirst" parent="GridContainer" instance=ExtResource("2_a3k6b")]
+[node name="ButtonWheel" parent="Panel/HBoxContainer" instance=ExtResource("2_ir6f5")]
 layout_mode = 2
-attribute_name = "Thirst"
 
-[node name="Energy" parent="GridContainer" instance=ExtResource("2_a3k6b")]
+[node name="VSeparator2" type="VSeparator" parent="Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 125
+theme_override_styles/separator = SubResource("StyleBoxEmpty_a3k6b")
+
+[node name="GridContainer" type="GridContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="Energy" parent="Panel/HBoxContainer/GridContainer" instance=ExtResource("2_a3k6b")]
 layout_mode = 2
 attribute_name = "Energy"
 
-[node name="Excitement" parent="GridContainer" instance=ExtResource("2_a3k6b")]
+[node name="Hunger" parent="Panel/HBoxContainer/GridContainer" instance=ExtResource("2_a3k6b")]
+layout_mode = 2
+attribute_name = "Hunger"
+
+[node name="Thirst" parent="Panel/HBoxContainer/GridContainer" instance=ExtResource("2_a3k6b")]
+layout_mode = 2
+attribute_name = "Thirst"
+
+[node name="Excitement" parent="Panel/HBoxContainer/GridContainer" instance=ExtResource("2_a3k6b")]
 layout_mode = 2
 attribute_name = "Excitement"

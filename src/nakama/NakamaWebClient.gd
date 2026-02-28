@@ -9,9 +9,9 @@ static var STORAGE_PERMISSION_PUBLIC = 2
 
 var nakama_client: NakamaClient = null
 var nakama_session: NakamaSession = null
-const NAKAMA_SERVER_ADDRESS = "13.60.189.32"
-const NAKAMA_SERVER_PORT = 7350
-const NAKAMA_WEB_PROTOKOL = "http"
+const NAKAMA_SERVER_ADDRESS = "mimirbytestest.duckdns.org"
+const NAKAMA_SERVER_PORT = 443
+const NAKAMA_WEB_PROTOKOL = "https"
 const NAKAMA_SERVER_KEY = "climber"
 
 
@@ -40,8 +40,8 @@ func first_time_connect_to_nakama(p_device_id: String) -> NakamaSession:
 			if nakama_session.is_exception():
 				push_error("An error occurred: %s" % nakama_session)
 			else:
-				await nakama_client.rpc_async(nakama_session, "setupWallet")
-				await nakama_client.rpc_async(nakama_session, "setupPlayerInventory")
+				#await nakama_client.rpc_async(nakama_session, "setupWallet")
+				#await nakama_client.rpc_async(nakama_session, "setupPlayerInventory")
 				return nakama_session
 	return nakama_session
 
@@ -101,3 +101,20 @@ func update_account(account_data: NakamaAccountData) -> bool:
 		return true
 	push_error("Error: no valid nakama session")
 	return false
+
+
+func request_storage_data(collection: String, p_user_id_of_owner: String, limit: int = 100):
+	var data: Array = []
+	var response: NakamaAPI.ApiStorageObjectList = await nakama_client.list_storage_objects_async(
+		nakama_session, collection, p_user_id_of_owner , limit)
+	if response.is_exception():
+		push_error(response.get_exception().message)
+		return {}
+	for o in response.objects:
+		data.append(JSON.parse_string(o.value))
+	while response.cursor.is_empty() == false:
+		response = await nakama_client.list_storage_objects_async(
+							nakama_session,collection, nakama_session.user_id, limit, response.cursor)
+		for o in response.objects:
+			data.append(JSON.parse_string(o.value))
+	return data

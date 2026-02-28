@@ -4,7 +4,7 @@ class_name NakamaGameSocket
 signal _on_match_finished(player_winner_slot: int, return_code: int)
 signal _on_match_ready_to_load()
 signal _on_socket_setup_done()
-signal _on_level_ready(level: Level) # is used in the level node
+#signal _on_level_ready(level: Level) # is used in the level node
 
 
 @export var multiplayer_level_spawner: MultiplayerSpawner = null
@@ -87,12 +87,12 @@ func leave_match(winner_player_slot: int, return_code: int):
 	mp_bridge.leave()
 	socket.close()
 	nakama_match = null
-	SyncManager.clear_peers()
+	#SyncManager.clear_peers()
 	_on_match_finished.emit(winner_player_slot,return_code)
 
 
 func _on_peer_connected(peer_id):
-	SyncManager.add_peer(peer_id)
+	#SyncManager.add_peer(peer_id)
 	other_player_net_ids.append(peer_id)
 	if am_i_server() == true:
 		await get_tree().create_timer(2.0).timeout
@@ -100,7 +100,7 @@ func _on_peer_connected(peer_id):
 
 
 func _on_peer_disconnected(peer_id):
-	SyncManager.remove_peer(peer_id)
+	#SyncManager.remove_peer(peer_id)
 	if peer_id > 1:
 		_on_match_finished.emit()
 	elif peer_id == 1:
@@ -135,5 +135,6 @@ func _add_player_to_match():
 
 @rpc("any_peer","reliable")
 func data_recived():
-	if GameStatics.IS_MATCH_SERVER == true:
-		pass
+	pass
+	#if GameStatics.IS_MATCH_SERVER == true:
+		#pass

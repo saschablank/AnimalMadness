@@ -1,7 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://2s2c2sb3ydc3"]
+[gd_scene load_steps=5 format=3 uid="uid://2s2c2sb3ydc3"]
 
 [ext_resource type="Script" uid="uid://vddh35tau1jo" path="res://src/MainMenu.gd" id="1_m2yvp"]
-[ext_resource type="Texture2D" uid="uid://b80ywk1avsyr6" path="res://assets/terrarium/Terrarium_FULL.png" id="2_s3dsm"]
+[ext_resource type="Texture2D" uid="uid://ck2y7b63xm821" path="res://assets/BunnoffelWorldTest.png" id="2_s3dsm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uwj7d"]
+texture = ExtResource("2_s3dsm")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nud1"]
+bg_color = Color(0.72156864, 0, 0, 0.5254902)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+shadow_color = Color(0, 0, 0, 0.49411765)
+anti_aliasing_size = 10.0
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -13,70 +25,90 @@ grow_vertical = 2
 script = ExtResource("1_m2yvp")
 metadata/_edit_use_anchors_ = true
 
-[node name="BG" type="TextureRect" parent="."]
+[node name="MainPanel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_s3dsm")
+theme_override_styles/panel = SubResource("StyleBoxTexture_uwj7d")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MenuPanel" type="Panel" parent="MainPanel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = -53.5
-offset_right = 4.0
-offset_bottom = 53.5
+offset_left = -178.5
+offset_top = -182.5
+offset_right = 178.5
+offset_bottom = 182.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2nud1")
+
+[node name="VBox" type="VBoxContainer" parent="MainPanel/MenuPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.5
+offset_top = -134.0
+offset_right = 91.5
+offset_bottom = 134.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBox" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-
-[node name="Title" type="Label" parent="MarginContainer/VBox"]
+[node name="Title" type="Label" parent="MainPanel/MenuPanel/VBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "TITLE_MAIN"
 horizontal_alignment = 1
 
-[node name="BtnContinue" type="Button" parent="MarginContainer/VBox"]
+[node name="BtnContinue" type="Button" parent="MainPanel/MenuPanel/VBox"]
 layout_mode = 2
 text = "MENU_CONTINUE"
 
-[node name="BtnStartWorld" type="Button" parent="MarginContainer/VBox"]
+[node name="BtnStartWorld" type="Button" parent="MainPanel/MenuPanel/VBox"]
 layout_mode = 2
 text = "MENU_START_WORLD"
 
-[node name="BtnLoadWorld" type="Button" parent="MarginContainer/VBox"]
+[node name="BtnLoadWorld" type="Button" parent="MainPanel/MenuPanel/VBox"]
 layout_mode = 2
 text = "MENU_LOAD_WORLD"
 
-[node name="BtnOptions" type="Button" parent="MarginContainer/VBox"]
+[node name="BtnOptions" type="Button" parent="MainPanel/MenuPanel/VBox"]
 layout_mode = 2
 text = "MENU_OPTIONS"
 
-[node name="BtnAchievements" type="Button" parent="MarginContainer/VBox"]
+[node name="BtnAchievements" type="Button" parent="MainPanel/MenuPanel/VBox"]
 layout_mode = 2
 text = "MENU_ACHIEVEMENTS"
 
-[node name="BtnCredits" type="Button" parent="MarginContainer/VBox"]
+[node name="BtnCredits" type="Button" parent="MainPanel/MenuPanel/VBox"]
 layout_mode = 2
 text = "MENU_CREDITS"
 
-[node name="BtnExit" type="Button" parent="MarginContainer/VBox"]
+[node name="BtnExit" type="Button" parent="MainPanel/MenuPanel/VBox"]
 layout_mode = 2
 text = "MENU_EXIT"
 
-[connection signal="pressed" from="MarginContainer/VBox/BtnContinue" to="." method="_on_btn_continue_pressed"]
-[connection signal="pressed" from="MarginContainer/VBox/BtnStartWorld" to="." method="_on_start_world_pressed"]
-[connection signal="pressed" from="MarginContainer/VBox/BtnLoadWorld" to="." method="_on_load_world_pressed"]
-[connection signal="pressed" from="MarginContainer/VBox/BtnOptions" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="MarginContainer/VBox/BtnAchievements" to="." method="_on_achievements_pressed"]
-[connection signal="pressed" from="MarginContainer/VBox/BtnCredits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="MarginContainer/VBox/BtnExit" to="." method="_on_exit_pressed"]
+[node name="RootSubmenu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="MainPanel/MenuPanel/VBox/BtnContinue" to="." method="_on_btn_continue_pressed"]
+[connection signal="pressed" from="MainPanel/MenuPanel/VBox/BtnStartWorld" to="." method="_on_start_world_pressed"]
+[connection signal="pressed" from="MainPanel/MenuPanel/VBox/BtnLoadWorld" to="." method="_on_load_world_pressed"]
+[connection signal="pressed" from="MainPanel/MenuPanel/VBox/BtnOptions" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MainPanel/MenuPanel/VBox/BtnAchievements" to="." method="_on_achievements_pressed"]
+[connection signal="pressed" from="MainPanel/MenuPanel/VBox/BtnCredits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MainPanel/MenuPanel/VBox/BtnExit" to="." method="_on_exit_pressed"]

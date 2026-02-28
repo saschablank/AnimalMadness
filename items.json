@@ -1,0 +1,28 @@
+{
+	"walkable_area": [
+		{
+			"name": "foodbowl",
+			"id": 1,
+			"texture_parts": ["food_bowl.png"],
+			"cost": 100,
+			"currency:": "gold"
+		}
+	],
+	"plant_area":[
+		{	
+			"name": "mushrooms",
+			"id": 100,
+			"texture_parts": ["pilzkopf.png", "pilzstil.png"],
+			"cost": 500,
+			"currency:": "gold"
+		},
+		{
+			"name": "small_green_plant",
+			"id": 101,
+			"texture_parts": ["pilzkopf.png", "pilzstil.png"],
+			"cost": 500,
+			"currency": "gold"
+		}
+	]
+
+}

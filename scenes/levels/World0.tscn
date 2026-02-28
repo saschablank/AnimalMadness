@@ -31,13 +31,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -172.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_tt84d")
 
 [node name="walkableArea" type="Polygon2D" parent="."]
 color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(274, 778, 298, 720, 364, 653, 672, 703, 977, 798, 1267, 747, 1473, 658, 1645, 735, 1803, 667, 1909, 649, 1907, 830, 1911, 948, 1732, 967, 1608, 1004, 1406, 1044, 1005, 1051, 632, 1036, 455, 1030, 181, 1022, 139, 915, 289, 846)
+polygon = PackedVector2Array(60, 767, 232, 715, 337, 730, 481, 709, 676, 711, 793, 730, 1194, 761, 1260, 719, 1383, 687, 1547, 683, 1674, 722, 1742, 740, 1878, 730, 1863, 822, 1543, 837, 1266, 845, 976, 872, 740, 859, 645, 865, 528, 898, 382, 882, 179, 814)
 
 [node name="Creature" parent="." node_paths=PackedStringArray("walkable_area") instance=ExtResource("3_fg4rj")]
 position = Vector2(881, 721)

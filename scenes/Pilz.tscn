@@ -1,0 +1,78 @@
+[gd_scene load_steps=11 format=3 uid="uid://bb4gmj5xoi5el"]
+
+[ext_resource type="Script" uid="uid://da77gvav4eya1" path="res://src/ItemBaseArea2D.gd" id="1_1gxit"]
+[ext_resource type="Shader" uid="uid://dfkauu4gjorn8" path="res://assets/shaders/ColorGrayscaleWithEmission.gdshader" id="1_wo5an"]
+[ext_resource type="Texture2D" uid="uid://5uh8nx6mh5n7" path="res://assets/items/plantable_area/pilzstil.png" id="2_xy864"]
+[ext_resource type="Texture2D" uid="uid://cfbfhlf7ei4qt" path="res://assets/items/plantable_area/pilzkopf.png" id="3_1gxit"]
+[ext_resource type="Texture2D" uid="uid://defq8epxxi7xk" path="res://assets/items/plantable_area/Pilz_01.png" id="5_1gxit"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n7kbj"]
+shader = ExtResource("1_wo5an")
+shader_parameter/pilzkopf = ExtResource("3_1gxit")
+shader_parameter/piltstiel = ExtResource("2_xy864")
+shader_parameter/color_1 = Color(0.8117647, 0.3137255, 0.11764706, 1)
+shader_parameter/base_color_emission_strenght = 3.5170001670574997
+shader_parameter/color_2 = Color(0.28235295, 0.18039216, 0.03529412, 1)
+shader_parameter/mix_step_color_2 = 0.4510000214225
+shader_parameter/tolerance = 0.0
+shader_parameter/light_dir = Vector2(-1, -0.5)
+shader_parameter/normal_map_scale = 0.400000019
+
+[sub_resource type="Animation" id="Animation_1gxit"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.2079277, 1.8977723)]
+}
+
+[sub_resource type="Animation" id="Animation_xy864"]
+resource_name = "click"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.75, 0.75), Vector2(1, 1), Vector2(0.75, 0.75), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gnxu8"]
+_data = {
+&"RESET": SubResource("Animation_1gxit"),
+&"click": SubResource("Animation_xy864")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xy864"]
+size = Vector2(24, 44)
+
+[node name="Pilz" type="Area2D"]
+position = Vector2(303, 168)
+script = ExtResource("1_1gxit")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_n7kbj")
+scale = Vector2(2.2079277, 1.8977723)
+texture = ExtResource("5_1gxit")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_gnxu8")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 3)
+shape = SubResource("RectangleShape2D_xy864")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

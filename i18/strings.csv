@@ -1,14 +1,14 @@
-keys,en
+keys,en,de
 TITLE_MAIN,Terrarium - Game
-MENU_START_WORLD,Start World
-MENU_LOAD_WORLD,Load World
-MENU_OPTIONS,Options
-MENU_EXIT,Exit
-MENU_CONTINUE,Continue
-MENU_ACHIEVEMENTS,Achievements
-MENU_CREDITS,Credits
-MENU_BACK,Back
-TITLE_ACHIEVEMENTS,Achievements
+MENU_START_WORLD,Start World,Neue Welt
+MENU_LOAD_WORLD,Load World, Lade Welt
+MENU_OPTIONS,Options, Optionen
+MENU_EXIT,Exit,Exit
+MENU_CONTINUE,Continue,Weiter
+MENU_ACHIEVEMENTS,Achievements,Erfolge
+MENU_CREDITS,Credits,Credits
+MENU_BACK,Back,Zurück
+TITLE_ACHIEVEMENTS,Achievements,Erfolge
 ACHIEVEMENTS_PLACEHOLDER,Achievements will appear here later.
 TITLE_CREDITS,Credits
 CREDITS_PLACEHOLDER,Credits will appear here later.
@@ -18,3 +18,5 @@ TITLE_SAVE_SLOTS,Save Slots
 SAVE_SLOTS_PLACEHOLDER,Save slots (6) will be implemented here later.
 TITLE_WORLD_SELECT,World Select
 WORLD_SELECT_PLACEHOLDER,World selection will be implemented here later.
+CHOSE_USERNAME,Choose your username.,Wähle einen Benutzernamen.
+ERROR_USERNAME_1,The username must contain at least 5 characters.,Der Benutzername muss mindestens 5 Zeichen enthalten.

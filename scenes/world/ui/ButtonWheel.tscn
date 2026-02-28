@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bldtdjh4t8iyj"]
+[gd_scene load_steps=10 format=3 uid="uid://bldtdjh4t8iyj"]
 
 [ext_resource type="Script" uid="uid://bakpwgthmcpgo" path="res://src/world/ui/ButtonWheel.gd" id="1_74orj"]
 
@@ -23,21 +23,282 @@ gradient = SubResource("Gradient_38t1k")
 fill = 1
 fill_from = Vector2(0.4957265, 0.52136755)
 
+[sub_resource type="Animation" id="Animation_74orj"]
+resource_name = "pop_out"
+length = 1.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("subbuttons/Feed:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("subbuttons/Pet:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("subbuttons/BuildingMode:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("subbuttons/Play:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("subbuttons/Shop:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("subbuttons/Feed:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("subbuttons/Pet:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("subbuttons/BuildingMode:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("subbuttons/Play:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("subbuttons/Shop:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1, 1.2333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_53scn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("subbuttons/Feed:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("subbuttons/Pet:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("subbuttons/BuildingMode:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("subbuttons/Play:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("subbuttons/Shop:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("subbuttons/Feed:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.497)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("subbuttons/Pet:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.497)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("subbuttons/BuildingMode:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.497)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("subbuttons/Play:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.497)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("subbuttons/Shop:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.497)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jnr10"]
+_data = {
+&"RESET": SubResource("Animation_53scn"),
+&"pop_out": SubResource("Animation_74orj")
+}
+
 [node name="ButtonWheel" type="Control"]
-custom_minimum_size = Vector2(150, 200)
+custom_minimum_size = Vector2(200, 150)
 layout_mode = 3
 anchors_preset = 0
-scale = Vector2(2, 2)
+offset_top = -100.0
+offset_right = 273.75
+offset_bottom = 68.5
+scale = Vector2(4, 4)
 script = ExtResource("1_74orj")
+radius_from_center = 125.0
+start_angle = Vector2(-0.25, -0.25)
+end_angle = Vector2(0.25, 0.25)
+base_angle_step_degrees = 15
 metadata/_edit_horizontal_guides_ = [163.0]
 metadata/_edit_vertical_guides_ = [33.0, 90.0]
 
 [node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 60.0
-offset_right = 66.0
-offset_bottom = 124.0
+layout_mode = 1
+offset_left = 22.5
+offset_top = -32.0
+offset_right = 86.5
+offset_bottom = 32.0
+scale = Vector2(2, 2)
 theme_override_font_sizes/font_size = 15
 theme_override_styles/normal = SubResource("StyleBoxEmpty_38t1k")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_38t1k")
@@ -49,16 +310,18 @@ icon = SubResource("GradientTexture2D_53scn")
 icon_alignment = 1
 
 [node name="subbuttons" type="Control" parent="."]
+z_index = 3
 anchors_preset = 0
-offset_right = 8.0
-offset_bottom = 12.5
+offset_left = 25.0
+offset_right = 25.0
 
 [node name="Feed" type="Button" parent="subbuttons"]
+visible = false
 layout_mode = 0
-offset_left = 16.0
-offset_top = 8.000001
-offset_right = 80.0
-offset_bottom = 72.0
+offset_left = -49.88835
+offset_top = -118.38834
+offset_right = 14.111649
+offset_bottom = -54.388336
 scale = Vector2(0.5, 0.497)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
@@ -72,11 +335,12 @@ icon = SubResource("GradientTexture2D_74orj")
 icon_alignment = 1
 
 [node name="Pet" type="Button" parent="subbuttons"]
+visible = false
 layout_mode = 0
-offset_left = 77.0
-offset_top = 47.000023
-offset_right = 141.0
-offset_bottom = 111.00002
+offset_left = 38.5
+offset_top = -155.0
+offset_right = 102.500015
+offset_bottom = -91.0
 scale = Vector2(0.5, 0.497)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.9490196, 0, 0, 1)
@@ -90,11 +354,12 @@ icon = SubResource("GradientTexture2D_74orj")
 icon_alignment = 1
 
 [node name="BuildingMode" type="Button" parent="subbuttons"]
+visible = false
 layout_mode = 0
-offset_left = 77.0
-offset_top = 122.00001
-offset_right = 141.0
-offset_bottom = 186.0
+offset_left = 126.88834
+offset_top = -118.38835
+offset_right = 190.88834
+offset_bottom = -54.38835
 scale = Vector2(0.5, 0.497)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.9490196, 0, 0, 1)
@@ -108,11 +373,12 @@ icon = SubResource("GradientTexture2D_74orj")
 icon_alignment = 1
 
 [node name="Play" type="Button" parent="subbuttons"]
+visible = false
 layout_mode = 0
-offset_left = 17.000004
-offset_top = 150.00003
-offset_right = 81.0
-offset_bottom = 214.00003
+offset_left = 163.5
+offset_top = -30.0
+offset_right = 227.50003
+offset_bottom = 34.0
 scale = Vector2(0.5, 0.497)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.9490196, 0, 0, 1)
@@ -125,8 +391,34 @@ text = "Play"
 icon = SubResource("GradientTexture2D_74orj")
 icon_alignment = 1
 
+[node name="Shop" type="Button" parent="subbuttons"]
+visible = false
+layout_mode = 0
+offset_left = 126.88835
+offset_top = 58.388344
+offset_right = 190.88835
+offset_bottom = 122.38837
+scale = Vector2(0.5, 0.497)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_38t1k")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_38t1k")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_38t1k")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_38t1k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_38t1k")
+text = "Shop"
+icon = SubResource("GradientTexture2D_74orj")
+icon_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_jnr10")
+}
+speed_scale = 3.0
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="subbuttons/Feed" to="." method="_on_feed_pressed"]
 [connection signal="pressed" from="subbuttons/Pet" to="." method="_on_pet_pressed"]
 [connection signal="pressed" from="subbuttons/BuildingMode" to="." method="_on_building_mode_pressed"]
 [connection signal="pressed" from="subbuttons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="subbuttons/Shop" to="." method="_on_shop_pressed"]

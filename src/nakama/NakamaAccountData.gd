@@ -10,6 +10,8 @@ var google_id: String = ""
 var wallet: Dictionary = {}
 
 
+
+
 func _init(p_nakama_web_client: NakamaWebClient):
 	nakama_web_client = p_nakama_web_client
 
