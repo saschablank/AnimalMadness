@@ -1,28 +1,56 @@
 {
-	"walkable_area": [
+	"item_for_creature":[
 		{
-			"name": "foodbowl",
-			"id": 1,
-			"texture_parts": ["food_bowl.png"],
-			"cost": 100,
-			"currency:": "gold"
+			"name": "basic_food",
+			"id": "200",
+			"texture_parts":["basic_food.png"],
+			"icon_texture:" :"basic_food_icon.png",
+			"cost": 50,
+			"currency:":"gold",
+			"game_data": {
+				"placeable": true,
+				"only_placeable_in": ["1"]
+			}
 		}
 	],
-	"plant_area":[
-		{	
-			"name": "mushrooms",
-			"id": 100,
-			"texture_parts": ["pilzkopf.png", "pilzstil.png"],
-			"cost": 500,
-			"currency:": "gold"
-		},
-		{
-			"name": "small_green_plant",
-			"id": 101,
-			"texture_parts": ["pilzkopf.png", "pilzstil.png"],
-			"cost": 500,
-			"currency": "gold"
-		}
-	]
-
+	"items_walkable_area":[
+      {
+         "name":"foodbowl",
+         "id":"1",
+         "texture_parts":[
+            "food_bowl.png"
+         ],
+         "icon_texture:" :"food_bowl_icon.png",
+         "cost":100,
+         "currency:":"gold",
+         "game_data":{
+			 "placeable": true,
+			 "item_input_ids": ["200"]
+		 }
+      }
+   ],
+   "items_plant_area":[
+      {
+         "name":"mushrooms",
+         "id":"100",
+         "texture_parts":[
+            "pilzkopf.png",
+            "pilzstil.png"
+         ],
+         "icon_texture:" :"pilz_icon.png",
+         "cost":500,
+         "currency:":"gold"
+      },
+      {
+         "name":"small_green_plant",
+         "id":"101",
+         "texture_parts":[
+            "pilzkopf.png",
+            "pilzstil.png"
+         ],
+         "icon_texture:" :"small_plant_icon",
+         "cost":500,
+         "currency":"gold"
+      }
+   ]
 }
